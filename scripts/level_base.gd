@@ -2,6 +2,9 @@ class_name LevelBase extends Node2D
 
 @onready var player: CharacterBody2D = $player
 @onready var currentCheckpoint: int = 0
+@onready var completed = false
+
+@export var levelIndex: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,3 +36,23 @@ func on_spawn():
 func change_current_checkpoint(checkpoint: int):
 	if checkpoint > currentCheckpoint:
 		currentCheckpoint = checkpoint
+		
+	#if reached last checkpoint / finished level
+	if checkpoint == $checkpoints.get_child_count() - 1:
+		completed = true
+		#if level is highest completed level
+		if levelIndex >= Global.currentLevel:
+			Global.currentLevel = levelIndex + 1
+			
+		get_tree().paused = true
+	
+	#TODO: pause game when finished level -> think mario?
+		#bc i don't want to do a thing where you press space at the end :sob:
+		#then i have to make a new class for finish
+	# add a screen that says it's done? like text on screen
+	# start timer .5s set paused to true
+	# or some way that user input no longer matters ... that would be better actually
+	#find a way to make user input no longer matter -> use for killzone as well
+	# start timer 2s or smth switch scene to level_selector
+	# alternatively have a menu for restart or level_selector
+	# same as pause menu

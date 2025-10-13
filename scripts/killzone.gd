@@ -13,6 +13,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
+	#TODO: make game pause when entering killzone
 	if body is Player:
 		timer.start()
 	pass # Replace with function body.

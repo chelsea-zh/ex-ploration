@@ -2,5 +2,13 @@
 
 [ext_resource type="Script" uid="uid://6tg17u8lrug6" path="res://scripts/level_selector.gd" id="1_aeu7d"]
 
-[node name="level_selector" type="Node2D"]
+[node name="level_selector" type="TextureButton"]
 script = ExtResource("1_aeu7d")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Siren"
+
+[connection signal="pressed" from="." to="." method="_on_button_pressed"]
