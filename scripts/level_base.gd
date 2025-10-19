@@ -17,6 +17,8 @@ func _ready() -> void:
 		checkpoint.checkpointReached.connect(change_current_checkpoint)
 		
 	$killzone.enteredKillzone.connect(on_spawn)
+	$killzone.stopInput.connect(deathAnimation)
+	$pauseMenu.restart.connect(restart)
 	
 	pass # Replace with function body.
 
@@ -31,6 +33,9 @@ func on_spawn():
 	var checkpoint = get_node(checkpoint_path) as Checkpoint
 	player.global_position = checkpoint.global_position
 	
+	Global.acceptInput = true
+	$player/AnimatedSprite2D.play("default")
+	
 	pass
 
 func change_current_checkpoint(checkpoint: int):
@@ -44,7 +49,14 @@ func change_current_checkpoint(checkpoint: int):
 		if levelIndex >= Global.currentLevel:
 			Global.currentLevel = levelIndex + 1
 			
-		get_tree().paused = true
+		Global.acceptInput = false
+		
+func deathAnimation():
+	$player/AnimatedSprite2D.play("death")
+	
+func restart():
+	currentCheckpoint = 0
+	on_spawn()
 	
 	#TODO: pause game when finished level -> think mario?
 		#bc i don't want to do a thing where you press space at the end :sob:

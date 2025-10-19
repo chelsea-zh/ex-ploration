@@ -3,6 +3,7 @@ class_name Killzone extends Area2D
 @onready var timer: Timer = $Timer
 
 signal enteredKillzone
+signal stopInput
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,6 +16,8 @@ func _process(_delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	#TODO: make game pause when entering killzone
 	if body is Player:
+		stopInput.emit()
+		Global.acceptInput = false
 		timer.start()
 	pass # Replace with function body.
 

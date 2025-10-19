@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://dk6hjxfjdv4ni"]
+[gd_scene load_steps=10 format=4 uid="uid://dk6hjxfjdv4ni"]
 
 [ext_resource type="PackedScene" uid="uid://bsmsebn43bg3w" path="res://scenes/characters/player.tscn" id="1_0y8gg"]
 [ext_resource type="Script" uid="uid://d108frj678r6q" path="res://scripts/level_base.gd" id="1_vvcwp"]
 [ext_resource type="Texture2D" uid="uid://b6q1mrw4dsjf6" path="res://assets/TESTtile.png" id="2_vvcwp"]
 [ext_resource type="PackedScene" uid="uid://4ej3ugwc2xe1" path="res://scenes/checkpoint.tscn" id="4_d61h5"]
 [ext_resource type="PackedScene" uid="uid://bytaf2gou5lup" path="res://scenes/killzone.tscn" id="5_6cjw3"]
+[ext_resource type="PackedScene" uid="uid://lkgk47ih37hs" path="res://scenes/pause_menu.tscn" id="6_dje0g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7fqed"]
 texture = ExtResource("2_vvcwp")
@@ -47,3 +48,5 @@ position = Vector2(394.4, 24.8)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 position = Vector2(201, 72)
 shape = SubResource("RectangleShape2D_dje0g")
+
+[node name="pauseMenu" parent="." instance=ExtResource("6_dje0g")]
