@@ -20,6 +20,10 @@ func _ready() -> void:
 	$killzone.stopInput.connect(deathAnimation)
 	$pauseMenu.restart.connect(restart)
 	
+	for child in get_children():
+		if child is Member:
+			child.level = name
+	
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
