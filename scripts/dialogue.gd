@@ -8,7 +8,7 @@ class_name Dialogue extends Label
 
 var level : String
 
-var id : int
+var dialogueId : int = 0
 
 var dialogue = {
 	
@@ -26,9 +26,9 @@ func _process(delta: float) -> void:
 
 func next():
 	visible = true
-	if dialogue[level].length - 1 == id:
+	if dialogue[level].length - 1 == dialogueId:
 		visible = false
 		valid = false
 	else:
-		text = dialogue[level][id]
+		text = dialogue[level][dialogueId]
 	pass

@@ -28,6 +28,10 @@ version_control/autoload_on_startup=true
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[gui]
+
+theme/custom_font="uid://breeac6wivc1l"
+
 [input]
 
 ui_left={

@@ -38,7 +38,7 @@ func on_spawn():
 	player.global_position = checkpoint.global_position
 	
 	Global.acceptInput = true
-	$player/AnimatedSprite2D.play("default")
+	$player/AnimatedSprite2D.animation = "default"
 	
 	pass
 
@@ -54,9 +54,11 @@ func change_current_checkpoint(checkpoint: int):
 			Global.currentLevel = levelIndex + 1
 			
 		Global.acceptInput = false
+		get_tree().change_scene_to_file.call_deferred("res://scenes/level_screen.tscn")
 		
 func deathAnimation():
-	$player/AnimatedSprite2D.play("death")
+	#$player/AnimatedSprite2D.play("death")
+	pass
 	
 func restart():
 	currentCheckpoint = 0

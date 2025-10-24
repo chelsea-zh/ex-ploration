@@ -1,18 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bsouqgl6ch50l"]
 
 [ext_resource type="Script" uid="uid://csdm40td623ck" path="res://scripts/member.gd" id="1_jiu80"]
-[ext_resource type="Texture2D" uid="uid://dv6su0bm2q2vy" path="res://icon.svg" id="2_kq7h4"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xny0t"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_kq7h4")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://d4k3pysysrvqq" path="res://assets/characters.tres" id="2_xny0t"]
+[ext_resource type="Script" uid="uid://crt7xlcnx473p" path="res://scripts/dialogue.gd" id="3_xny0t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kq7h4"]
 radius = 33.0151
@@ -21,16 +11,22 @@ radius = 33.0151
 script = ExtResource("1_jiu80")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-sprite_frames = SubResource("SpriteFrames_xny0t")
+sprite_frames = ExtResource("2_xny0t")
+frame = 6
+centered = false
+offset = Vector2(-8, -16)
 
 [node name="range" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_kq7h4")
 
 [node name="dialogue" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "..."
+offset_left = -19.0
+offset_top = -34.0
+offset_right = 21.0
+offset_bottom = -11.0
+theme_override_font_sizes/font_size = 16
+text = "hihi"
+script = ExtResource("3_xny0t")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

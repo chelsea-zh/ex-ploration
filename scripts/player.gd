@@ -1,9 +1,10 @@
 class_name Player extends CharacterBody2D
 
 
-const SPEED = 200.0
+const SPEED = 100.0
 const JUMP_VELOCITY = -300.0
 
+var flip = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -21,6 +22,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if Input.is_action_just_pressed("ui_left"):
+		flip = false
+	if Input.is_action_just_pressed("ui_right"):
+		flip = true 
+		
+	$AnimatedSprite2D.flip_h = flip
 		
 	velocity.x *= int(Global.acceptInput)
 
