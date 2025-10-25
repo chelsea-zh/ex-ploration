@@ -13,7 +13,8 @@ var dialogueId : int = 0
 var dialogue = {
 	"level_base": [
 		"hello",
-		"testing"
+		"testing",
+		"the quick brown fox jumps over the lazy dog"
 	]
 }
 
@@ -23,6 +24,8 @@ var dialogue = {
 func _ready() -> void:
 	if dialogue.size() == 0:
 		valid = false
+		
+		
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,6 +39,7 @@ func next():
 		visible = false
 		valid = false
 	else:
-		text = dialogue[level][dialogueId]
+		var memberName = get_script().resource_path.get_basename().get_file()
+		text = memberName + ": \n" + dialogue[level][dialogueId]
 		dialogueId += 1
 	pass

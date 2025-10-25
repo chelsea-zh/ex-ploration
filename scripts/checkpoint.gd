@@ -16,3 +16,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		checkpointReached.emit(int(name))
 		$AnimatedSprite2D.frame = 1
 	pass # Replace with function body.
+
+func restartTexture():
+	$AnimatedSprite2D.frame = 0

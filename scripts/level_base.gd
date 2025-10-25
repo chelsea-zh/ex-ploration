@@ -6,6 +6,7 @@ class_name LevelBase extends Node2D
 
 @export var levelIndex: int
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	on_spawn()
@@ -25,6 +26,7 @@ func _ready() -> void:
 	for child in get_children():
 		if child is Member:
 			child.level = name
+			child.setLevelName(name)
 	
 	pass # Replace with function body.
 
@@ -69,6 +71,12 @@ func deathAnimation():
 	
 func restart():
 	currentCheckpoint = 0
+	for i in range($checkpoints.get_child_count()):
+		if i != 0:
+			var checkpoint_path = "checkpoints/"
+			checkpoint_path += str(i)
+			var checkpoint = get_node(checkpoint_path) as Checkpoint
+			checkpoint.restartTexture()
 	on_spawn()
 	
 	#TODO: pause game when finished level -> think mario?

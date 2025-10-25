@@ -8,11 +8,10 @@ var level : String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	dialogue.set_script(load("res://scripts/" + memberName + ".gd"))
+	dialogue._ready()
+	
 	dialogue.dialogueId = 0
-	if level == "siren":
-		dialogue.text = "Press \"f\" to interact."
-	else:
-		dialogue.visible = false
 		
 	changeFrame()
 	
@@ -60,3 +59,11 @@ func changeFrame():
 			$AnimatedSprite2D.frame = 6
 	
 	pass
+	
+func setLevelName(name):
+	level = name
+	if level == "siren":
+		dialogue.visible = true
+		dialogue.text = "Press \"f\" to interact."
+	else:
+		dialogue.visible = false

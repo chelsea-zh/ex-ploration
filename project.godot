@@ -19,6 +19,14 @@ config/icon="res://icon.svg"
 
 Global="*res://scripts/global.gd"
 
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/mode=4
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
@@ -30,7 +38,8 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [gui]
 
-theme/custom_font="uid://breeac6wivc1l"
+theme/custom="uid://dpq5khrg6fg8b"
+theme/custom_font="uid://c2cpo22t66wll"
 
 [input]
 
@@ -83,4 +92,4 @@ interact={
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
+textures/canvas_textures/default_texture_filter=3
