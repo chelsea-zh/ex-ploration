@@ -1,9 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://4ej3ugwc2xe1"]
+[gd_scene load_steps=7 format=3 uid="uid://4ej3ugwc2xe1"]
 
 [ext_resource type="Script" uid="uid://cjf3papjojsjl" path="res://scripts/checkpoint.gd" id="1_yyywg"]
+[ext_resource type="Texture2D" uid="uid://o4ao2u2hmsax" path="res://assets/tileset-3bbf.png" id="2_ywqth"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yyywg"]
-radius = 17.0
+radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsimk"]
+atlas = ExtResource("2_ywqth")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqsag"]
+atlas = ExtResource("2_ywqth")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c45tw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsimk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqsag")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="checkpoint" type="Node2D"]
 script = ExtResource("1_yyywg")
@@ -12,5 +35,8 @@ script = ExtResource("1_yyywg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_yyywg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c45tw")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

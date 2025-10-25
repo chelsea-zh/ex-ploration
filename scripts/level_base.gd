@@ -15,6 +15,8 @@ func _ready() -> void:
 		checkpoint_path += str(i)
 		var checkpoint = get_node(checkpoint_path) as Checkpoint
 		checkpoint.checkpointReached.connect(change_current_checkpoint)
+		if (i == $checkpoints.get_child_count() - 1):
+			checkpoint.visible = false
 		
 	$killzone.enteredKillzone.connect(on_spawn)
 	$killzone.stopInput.connect(deathAnimation)
@@ -54,7 +56,12 @@ func change_current_checkpoint(checkpoint: int):
 			Global.currentLevel = levelIndex + 1
 			
 		Global.acceptInput = false
-		get_tree().change_scene_to_file.call_deferred("res://scenes/level_screen.tscn")
+		var timer = Timer.new()
+		add_child(timer)
+		timer.one_shot = true
+		timer.wait_time = 1
+		timer.timeout.connect(finish)
+		timer.start()
 		
 func deathAnimation():
 	#$player/AnimatedSprite2D.play("death")
@@ -74,3 +81,6 @@ func restart():
 	# start timer 2s or smth switch scene to level_selector
 	# alternatively have a menu for restart or level_selector
 	# same as pause menu
+
+func finish():
+	get_tree().change_scene_to_file.call_deferred("res://scenes/level_screen.tscn")

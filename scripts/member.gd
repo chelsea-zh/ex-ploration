@@ -13,6 +13,8 @@ func _ready() -> void:
 		dialogue.text = "Press \"f\" to interact."
 	else:
 		dialogue.visible = false
+		
+	changeFrame()
 	
 	# for jongseob's bun ... i should have just added 2 more pixels to each sprite
 	# but u can't move by folder in resprite ... whyyyyyyyyyyy :sob:
@@ -40,3 +42,21 @@ func _on_body_exited(body: Node2D) -> void:
 	if body is Player:
 		inRange = false
 	pass # Replace with function body.
+
+func changeFrame():
+	
+	match memberName:
+		"soul":
+			$AnimatedSprite2D.frame = 1
+		"jiung":
+			$AnimatedSprite2D.frame = 2
+		"theo":
+			$AnimatedSprite2D.frame = 3
+		"intak":
+			$AnimatedSprite2D.frame = 4
+		"keeho":
+			$AnimatedSprite2D.frame = 5
+		"jongseob":
+			$AnimatedSprite2D.frame = 6
+	
+	pass

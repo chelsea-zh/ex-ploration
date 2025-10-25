@@ -30,7 +30,7 @@ func go_to_level(levelName: String):
 		timer.wait_time = .5
 		timer.one_shot = true
 		timer.timeout.connect()
-		timer.start()
+		#timer.start()
 		#TODO: fade transition? changing size? wobbling? idk :sob:
 
 func display_locked():
