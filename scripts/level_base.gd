@@ -79,6 +79,10 @@ func restart():
 			checkpoint.restartTexture()
 	on_spawn()
 	
+	for child in get_children():
+		if child is Member:
+			child._ready()
+	
 	#TODO: pause game when finished level -> think mario?
 		#bc i don't want to do a thing where you press space at the end :sob:
 		#then i have to make a new class for finish

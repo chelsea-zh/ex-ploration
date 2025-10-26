@@ -1,0 +1,81 @@
+[gd_scene load_steps=15 format=3 uid="uid://bd8qdagyjv0tc"]
+
+[ext_resource type="Script" uid="uid://jqyy5775sa5m" path="res://scripts/title.gd" id="1_p6dhs"]
+[ext_resource type="Texture2D" uid="uid://ccr5gc8eo54ri" path="res://assets/title-8aef.png" id="1_wosw1"]
+[ext_resource type="FontFile" uid="uid://tg48mf6tefcs" path="res://assets/yoster-island/yoster.ttf" id="2_p6dhs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p6dhs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b3w7a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4rr2b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yql1r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ia1n6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hiwto"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w65of"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ygloa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6civk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7af2g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pyl7j"]
+
+[node name="title" type="Node2D"]
+script = ExtResource("1_p6dhs")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("1_wosw1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.311
+anchor_right = 0.062
+anchor_bottom = 0.311
+offset_left = -15.68
+offset_top = 32.04
+offset_right = 242.32
+offset_bottom = 68.04
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_p6dhs")
+theme_override_font_sizes/font_size = 36
+text = "Ex-ploration"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.544
+anchor_right = 0.062
+anchor_bottom = 0.544
+offset_left = 0.32
+offset_top = -11.84
+offset_right = 68.32
+offset_bottom = 28.16
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p6dhs")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_b3w7a")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_yql1r")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ia1n6")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_hiwto")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_w65of")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ygloa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6civk")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_7af2g")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pyl7j")
+text = "S T A R T"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

@@ -15,7 +15,6 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_pause_pressed() -> void:
-	print("pause")
 	menuOpen = !menuOpen
 	menu.visible = menuOpen
 	get_tree().paused = menuOpen
@@ -27,7 +26,6 @@ func return_to_game():
 	get_tree().paused = false
 
 func _on_continue_pressed() -> void:
-	print("working")
 	return_to_game()
 	pass # Replace with function body.
 

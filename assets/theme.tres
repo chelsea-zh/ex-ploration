@@ -1,4 +1,15 @@
-[gd_resource type="Theme" format=3 uid="uid://dpq5khrg6fg8b"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dpq5khrg6fg8b"]
+
+[ext_resource type="Texture2D" uid="uid://3paa28e1kbwp" path="res://assets/button-8f81.png" id="1_5x3i2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wl1kw"]
+content_margin_top = 0.0
+content_margin_right = 0.0
+texture = ExtResource("1_5x3i2")
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
 
 [resource]
+Button/styles/normal = SubResource("StyleBoxTexture_wl1kw")
 Label/constants/line_spacing = -5
