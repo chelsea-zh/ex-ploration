@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://6tg17u8lrug6" path="res://scripts/level_selector.gd" id="1_aeu7d"]
 
 [node name="level_selector" type="Button"]
+custom_minimum_size = Vector2(32, 16)
 offset_left = -16.0
 offset_top = -16.0
 offset_right = 16.0
