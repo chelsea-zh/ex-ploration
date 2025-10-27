@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://bd8qdagyjv0tc"]
+[gd_scene load_steps=16 format=3 uid="uid://bd8qdagyjv0tc"]
 
 [ext_resource type="Script" uid="uid://jqyy5775sa5m" path="res://scripts/title.gd" id="1_p6dhs"]
-[ext_resource type="Texture2D" uid="uid://ccr5gc8eo54ri" path="res://assets/title-8aef.png" id="1_wosw1"]
 [ext_resource type="FontFile" uid="uid://tg48mf6tefcs" path="res://assets/yoster-island/yoster.ttf" id="2_p6dhs"]
+[ext_resource type="Texture2D" uid="uid://4vogugixcx6b" path="res://assets/title-d08e.png" id="2_pyl7j"]
+[ext_resource type="PackedScene" uid="uid://b17o72k6pj1mp" path="res://scenes/star.tscn" id="3_pyl7j"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p6dhs"]
 
@@ -33,7 +34,86 @@ script = ExtResource("1_p6dhs")
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(2, 2)
-texture = ExtResource("1_wosw1")
+texture = ExtResource("2_pyl7j")
+
+[node name="stars" type="Node2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="star" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(159, 71.5)
+
+[node name="star2" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(49, 150.5)
+
+[node name="star4" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(293.5, 104.5)
+
+[node name="star3" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(200, 19.5)
+
+[node name="star5" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(25, 142.5)
+frame = 1
+
+[node name="star6" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(82, 166.5)
+frame = 1
+
+[node name="star7" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(221, 165.5)
+frame = 1
+
+[node name="star8" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(238, 97.5)
+frame = 1
+
+[node name="star9" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(222, 78.5)
+frame = 1
+
+[node name="star10" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(310, 35.5)
+frame = 1
+
+[node name="star11" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(172, 52.5)
+frame = 1
+
+[node name="star12" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(131, 11.5)
+frame = 1
+
+[node name="star13" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(114, 22.5)
+frame = 2
+
+[node name="star14" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(182, 8.5)
+frame = 2
+
+[node name="star15" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(242, 81.5)
+frame = 2
+
+[node name="star16" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(308, 98.5)
+frame = 2
+
+[node name="star17" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(275, 118.5)
+frame = 2
+
+[node name="star18" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(228, 156.5)
+frame = 2
+
+[node name="star19" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(141, 172.5)
+frame = 2
+
+[node name="star20" parent="stars" instance=ExtResource("3_pyl7j")]
+position = Vector2(66, 133.5)
+frame = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

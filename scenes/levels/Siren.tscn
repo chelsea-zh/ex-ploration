@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://cuk4q8ook8wmx"]
+
+[ext_resource type="Script" uid="uid://d108frj678r6q" path="res://scripts/level_base.gd" id="1_ubn12"]
+[ext_resource type="PackedScene" uid="uid://4ej3ugwc2xe1" path="res://scenes/checkpoint.tscn" id="2_wbrtg"]
+[ext_resource type="PackedScene" uid="uid://bsmsebn43bg3w" path="res://scenes/characters/player.tscn" id="3_kg4gy"]
+[ext_resource type="PackedScene" uid="uid://bytaf2gou5lup" path="res://scenes/killzone.tscn" id="4_p5uqf"]
+[ext_resource type="PackedScene" uid="uid://lkgk47ih37hs" path="res://scenes/pause_menu.tscn" id="5_3obs7"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mwjfy"]
+
+[node name="Siren" type="Node2D"]
+script = ExtResource("1_ubn12")
+metadata/_custom_type_script = "uid://d108frj678r6q"
+
+[node name="checkpoints" type="Node2D" parent="."]
+
+[node name="0" parent="checkpoints" instance=ExtResource("2_wbrtg")]
+
+[node name="1" parent="checkpoints" instance=ExtResource("2_wbrtg")]
+position = Vector2(112, 16)
+
+[node name="player" parent="." instance=ExtResource("3_kg4gy")]
+
+[node name="killzone" parent="." instance=ExtResource("4_p5uqf")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(0, 72)
+shape = SubResource("WorldBoundaryShape2D_mwjfy")
+
+[node name="pauseMenu" parent="." instance=ExtResource("5_3obs7")]

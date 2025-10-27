@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://b17o72k6pj1mp"]
+
+[ext_resource type="Texture2D" uid="uid://hfenfboxy0wu" path="res://assets/star-b948.png" id="1_j6vao"]
+[ext_resource type="Script" uid="uid://dk0wawbotjd07" path="res://scripts/star.gd" id="2_ef0hr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d8bx"]
+atlas = ExtResource("1_j6vao")
+region = Rect2(0, 0, 18, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lrp4"]
+atlas = ExtResource("1_j6vao")
+region = Rect2(18, 0, 18, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxbdi"]
+atlas = ExtResource("1_j6vao")
+region = Rect2(36, 0, 18, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pexwv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8d8bx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lrp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxbdi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="star" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_pexwv")
+script = ExtResource("2_ef0hr")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
