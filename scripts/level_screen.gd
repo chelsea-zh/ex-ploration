@@ -22,7 +22,7 @@ func go_to_level(levelName: String):
 	var level_path = "levels/" + levelName
 	var level = get_node(level_path) as LevelSelector
 	#if unlocked
-	if level.levelIndex >= Global.currentLevel:
+	if level.levelIndex <= Global.currentLevel:
 		get_tree().change_scene_to_file.call_deferred("res://scenes/levels/" + level.name + ".tscn")
 	else: #if locked
 		print("locked")
@@ -37,3 +37,8 @@ func go_to_level(levelName: String):
 
 func display_locked():
 	$level_locked.visible = false
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+	pass # Replace with function body.

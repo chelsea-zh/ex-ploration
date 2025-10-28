@@ -5,7 +5,7 @@ func _ready() -> void:
 	
 	dialogue = {
 		
-		"level_base": [
+		"siren": [
 			"testing attaching script",
 			"yay"
 		]

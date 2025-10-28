@@ -19,9 +19,83 @@ texture = ExtResource("2_g5mqe")
 scale = Vector2(2, 2)
 
 [node name="siren" parent="levels" instance=ExtResource("2_ljd76")]
-offset_left = 28.0
-offset_top = 24.0
-offset_right = 60.0
-offset_bottom = 40.0
+offset_left = 32.0
+offset_top = 12.0
+offset_right = 64.0
+offset_bottom = 28.0
 levelIndex = 1
 levelName = "Siren"
+
+[node name="do_it_like_this" parent="levels" instance=ExtResource("2_ljd76")]
+offset_left = 144.0
+offset_top = 12.0
+offset_right = 176.0
+offset_bottom = 28.0
+levelIndex = 2
+levelName = "Do It Like This"
+
+[node name="doom_du_doom" parent="levels" instance=ExtResource("2_ljd76")]
+offset_left = 256.0
+offset_top = 12.0
+offset_right = 288.0
+offset_bottom = 28.0
+levelIndex = 3
+levelName = "Doom Du Doom"
+
+[node name="back_down" parent="levels" instance=ExtResource("2_ljd76")]
+offset_left = 32.0
+offset_top = 60.0
+offset_right = 64.0
+offset_bottom = 76.0
+levelIndex = 4
+levelName = "Back Down"
+
+[node name="jump" parent="levels" instance=ExtResource("2_ljd76")]
+offset_left = 144.0
+offset_top = 60.0
+offset_right = 176.0
+offset_bottom = 76.0
+levelIndex = 5
+levelName = "Jump"
+
+[node name="killin_it" parent="levels" instance=ExtResource("2_ljd76")]
+offset_left = 256.0
+offset_top = 60.0
+offset_right = 288.0
+offset_bottom = 76.0
+levelIndex = 6
+levelName = "Killin' It"
+
+[node name="sad_song" parent="levels" instance=ExtResource("2_ljd76")]
+offset_left = 32.0
+offset_top = 108.0
+offset_right = 64.0
+offset_bottom = 124.0
+levelIndex = 7
+levelName = "Sad Song"
+
+[node name="duh" parent="levels" instance=ExtResource("2_ljd76")]
+offset_left = 144.0
+offset_top = 108.0
+offset_right = 176.0
+offset_bottom = 124.0
+levelIndex = 8
+levelName = "DUH!"
+
+[node name="ex" parent="levels" instance=ExtResource("2_ljd76")]
+offset_left = 256.0
+offset_top = 108.0
+offset_right = 288.0
+offset_bottom = 124.0
+levelIndex = 9
+levelName = "EX"
+
+[node name="quit" type="Button" parent="."]
+offset_left = 288.0
+offset_top = 312.0
+offset_right = 352.0
+offset_bottom = 328.0
+text = "QUIT   GAME
+"
+
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

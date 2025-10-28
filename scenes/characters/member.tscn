@@ -12,7 +12,7 @@ script = ExtResource("1_jiu80")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_xny0t")
-frame = 6
+frame = 4
 centered = false
 offset = Vector2(-8, -16)
 

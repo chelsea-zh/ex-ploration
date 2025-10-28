@@ -8,6 +8,7 @@ signal restart
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	return_to_game()
+	$CanvasLayer/Pause.texture_normal = load("res://assets/pause-04ab.png")
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,6 +19,10 @@ func _on_pause_pressed() -> void:
 	menuOpen = !menuOpen
 	menu.visible = menuOpen
 	get_tree().paused = menuOpen
+	if menuOpen:
+		$CanvasLayer/Pause.texture_normal = load("res://assets/play-04a9.png")
+	else:
+		$CanvasLayer/Pause.texture_normal = load("res://assets/pause-04ab.png")
 	pass # Replace with function body.
 
 func return_to_game():
