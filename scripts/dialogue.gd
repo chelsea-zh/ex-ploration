@@ -39,7 +39,7 @@ func next():
 		visible = false
 		valid = false
 	else:
-		var memberName = get_script().resource_path.get_basename().get_file()
+		var memberName = get_script().resource_path.get_basename().get_file().capitalize()
 		text = memberName + ": \n" + dialogue[level][dialogueId]
 		dialogueId += 1
 	pass

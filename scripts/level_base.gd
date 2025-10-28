@@ -54,7 +54,9 @@ func change_current_checkpoint(checkpoint: int):
 	if checkpoint == $checkpoints.get_child_count() - 1:
 		completed = true
 		#if level is highest completed level
-		if levelIndex >= Global.currentLevel:
+		print(levelIndex)
+		print(Global.currentLevel)
+		if levelIndex == Global.currentLevel:
 			Global.currentLevel = levelIndex + 1
 			
 		Global.acceptInput = false

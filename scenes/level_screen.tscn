@@ -15,6 +15,36 @@ texture = ExtResource("2_g5mqe")
 
 [node name="level_locked" type="CanvasLayer" parent="."]
 
+[node name="ColorRect" type="ColorRect" parent="level_locked"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = -16.0
+offset_right = 164.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.686275)
+
+[node name="Label" type="Label" parent="level_locked"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.5
+offset_top = -8.0
+offset_right = 107.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level locked! Complete previous levels first!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="levels" type="Node2D" parent="."]
 scale = Vector2(2, 2)
 

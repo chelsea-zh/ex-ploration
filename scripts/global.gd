@@ -1,6 +1,7 @@
 extends Node
 
 @onready var currentLevel = 1
+var maxLevel = 3
 
 var acceptInput = true
 

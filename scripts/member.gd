@@ -8,7 +8,7 @@ var level : String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	dialogue.set_script(load("res://scripts/" + memberName + ".gd"))
+	dialogue.set_script(load("res://scripts/members/" + memberName + ".gd"))
 	dialogue._ready()
 	
 	dialogue.dialogueId = 0
